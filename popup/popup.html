@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+  <title>TestPlex Element Picker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1 class="title">TestPlex Element Picker</h1>
+    <div class="controls">
+      <button id="startButton" class="button pick-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          <polyline points="16 6 12 2 8 6"></polyline>
+          <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+        <span>Pick Element</span>
+      </button>
+      <button id="settingsButton" class="button icon-button" title="Settings">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="elementInfo" class="info-box">
+    <div class="selector-group">
+      <div class="selector-label">ID</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="idSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="id" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="idSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="id" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Name</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="nameSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="name" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="nameSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="name" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Class</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="classSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="class" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="classSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="class" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Tag</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="tagSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="tag" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="tagSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="tag" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Attribute</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="attributeSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="attribute" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="attributeSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="attribute" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Position</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="positionSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="position" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="positionSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="position" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Text XPath</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="textXPathSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="textXPath" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="textXPathSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="textXPath" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Full XPath</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="fullXPathSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="fullXPath" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="fullXPathSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="fullXPath" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">CSS</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="cssSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="css" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="cssSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="css" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Text</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="textSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="text" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="textSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="text" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-group">
+      <div class="selector-label">Partial Text</div>
+      <div class="selector-values">
+        <div class="selector-value-container">
+          <div id="partialTextSelector" class="selector-value">-</div>
+          <button class="copy-button" data-selector="partialText" data-type="selector">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="selector-value-container">
+          <div id="partialTextSelectorSelenium" class="selector-value">-</div>
+          <button class="copy-button" data-selector="partialText" data-type="selenium">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="settingsPanel" class="settings-panel">
+    <div class="settings-header">
+      <h2>Settings</h2>
+      <button id="closeSettings" class="close-button">&times;</button>
+    </div>
+    <div class="settings-content">
+      <div class="setting-group">
+        <h3 class="setting-group-title">Appearance</h3>
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="themeSetting">
+            <span class="setting-text">Light theme</span>
+          </label>
+          <div class="setting-tooltip">Switch between light and dark themes</div>
+        </div>
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="autoSortSetting">
+            <span class="setting-text">Sort by Value</span>
+          </label>
+          <div class="setting-tooltip">Automatically show selectors with values at the top</div>
+        </div>
+      </div>
+      <div class="setting-group">
+        <h3 class="setting-group-title">Selectors</h3>
+        <div class="selector-order">
+          <div class="selector-list" id="selectorList">
+            <div class="selector-item" draggable="true" data-selector="id">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showIdSelector" checked>
+                <span class="setting-text">ID Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="name">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showNameSelector" checked>
+                <span class="setting-text">Name Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="class">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showClassSelector" checked>
+                <span class="setting-text">Class Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="tag">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showTagSelector" checked>
+                <span class="setting-text">Tag Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="attribute">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showAttributeSelector" checked>
+                <span class="setting-text">Attribute Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="position">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showPositionSelector" checked>
+                <span class="setting-text">Position Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="textXPath">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showTextXPathSelector" checked>
+                <span class="setting-text">Text Content XPath</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="fullXPath">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showFullXPathSelector" checked>
+                <span class="setting-text">Full XPath</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="css">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showCssSelector" checked>
+                <span class="setting-text">CSS Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="text">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showTextSelector" checked>
+                <span class="setting-text">Text Selector</span>
+              </label>
+            </div>
+            <div class="selector-item" draggable="true" data-selector="partialText">
+              <span class="drag-handle"></span>
+              <label class="setting-label">
+                <input type="checkbox" id="showPartialTextSelector" checked>
+                <span class="setting-text">Partial Text Selector</span>
+              </label>
+            </div>
+          </div>
+          <div class="setting-tooltip">Drag and drop to reorder selectors, toggle checkbox to show/hide</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="successMessage"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 
