@@ -34,11 +34,12 @@ TestPlex Element Picker is a specialized tool designed to streamline the process
 
 ## 🔧 Installation
 
+/*
 1. Clone this repository
 2. Open Chrome and navigate to `chrome://extensions/`
 3. Enable "Developer mode" in the top right
 4. Click "Load unpacked" and select the extension directory
-
+*/
 ## 📖 Usage
 
 1. Click the extension icon in your Chrome toolbar
