@@ -2,6 +2,8 @@
 
 🎯 A powerful Chrome extension for test automation engineers and QA professionals that generates ready-to-use Selenium selectors with a single click.
 
+⚠️ **IMPORTANT NOTICE**: While this repository is public for demonstration purposes, the code is proprietary and protected. See [License](#⚖️-license) section for details.
+
 ## 🌟 Overview
 
 TestPlex Element Picker is a specialized tool designed to streamline the process of creating robust Selenium test scripts. With its intuitive element picker and instant Selenium Java syntax generation, it significantly reduces the time spent on writing element locators for web automation tests.
@@ -69,14 +71,21 @@ The extension is built with vanilla JavaScript and Chrome Extension APIs for opt
 
 ## ⚖️ License
 
-This project is licensed under a Personal Use License - see the [LICENSE](LICENSE) file for details.
+This project is protected under a Proprietary License - see the [LICENSE](LICENSE) file for details.
 
-### Key License Points:
-- ✅ Personal, non-commercial use only
-- ❌ No commercial use
-- ❌ No distribution
-- ❌ No modification
+### Key Points:
+- ⚠️ **Private Code**: While the repository is public, the code is private and protected
+- ✅ You MAY:
+  - View the code for educational purposes
+  - Reference the project in your portfolio
+- ❌ You MAY NOT:
+  - Copy or download the code
+  - Create derivative works
+  - Use the code without permission
+  - Distribute any part of the code
+
+For permissions or inquiries, please contact the repository owner.
 
 ## 🤝 Support
 
-This tool is provided for personal use only. While we don't accept contributions, we appreciate feedback and bug reports through the issues section. 
+This is a proprietary tool. While we appreciate feedback and bug reports through the issues section, we do not accept public contributions. For collaboration inquiries, please contact the repository owner directly. 
