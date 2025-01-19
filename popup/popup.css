@@ -504,4 +504,30 @@ input[type="checkbox"]:checked::after {
   border-radius: 8px;
   max-height: 300px;
   overflow-y: auto;
+}
+
+.github-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.github-button:hover {
+  background: var(--button-hover-bg);
+  border-color: var(--button-hover-border);
+}
+
+.github-button svg {
+  color: var(--text-primary);
 } 
