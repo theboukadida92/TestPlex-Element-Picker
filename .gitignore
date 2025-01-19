@@ -1,8 +1,44 @@
+# Protect all source code files
+/popup/*
+/content/*
+/background/*
+/icons/*
+manifest.json
+
+# Keep documentation public
+!README.md
+!LICENSE
+!.gitignore
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Compiled class file
 *.class
-
-# Log file
-*.log
 
 # BlueJ files
 *.ctxt
